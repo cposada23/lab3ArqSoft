@@ -45,6 +45,7 @@ public class FilmMBean {
     }
     
     public String update(){
+        System.out.println("update");
         film = filmManager.update(film);
         return "FilmList";
     }

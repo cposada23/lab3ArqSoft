@@ -5,99 +5,58 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Film Details</title>
     </h:head>
     <h:body>
-        Hello from Facelets
         <f:view>
 
-
+            
+            
             <h:form>
-                <h1><h:outputText value="List"/></h1>
-                <p:dataTable value="#{filmMBean.films}" var="item">
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="FilmId"/>
-                        </f:facet>
-                        <h:outputText value="#{item.filmId}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Title"/>
-                        </f:facet>
-                        <h:outputText value="#{item.title}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Description"/>
-                        </f:facet>
-                        <h:outputText value="#{item.description}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="ReleaseYear"/>
-                        </f:facet>
-                        <h:outputText value="#{item.releaseYear}">
-                            <f:convertDateTime pattern="MM/dd/yyyy" />
-                        </h:outputText>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="RentalDuration"/>
-                        </f:facet>
-                        <h:outputText value="#{item.rentalDuration}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="RentalRate"/>
-                        </f:facet>
-                        <h:outputText value="#{item.rentalRate}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Length"/>
-                        </f:facet>
-                        <h:outputText value="#{item.length}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="ReplacementCost"/>
-                        </f:facet>
-                        <h:outputText value="#{item.replacementCost}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Rating"/>
-                        </f:facet>
-                        <h:outputText value="#{item.rating}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="SpecialFeatures"/>
-                        </f:facet>
-                        <h:outputText value="#{item.specialFeatures}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="LastUpdate"/>
-                        </f:facet>
-                        <h:outputText value="#{item.lastUpdate}">
-                            <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
-                        </h:outputText>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="LanguageId"/>
-                        </f:facet>
-                        <h:outputText value="#{item.languageId}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="OriginalLanguageId"/>
-                        </f:facet>
-                        <h:outputText value="#{item.originalLanguageId}"/>
-                    </p:column>
-                </p:dataTable>
+                <h1><h:outputText value="Create/Edit"/></h1>
+                <p:panelGrid columns="2">
+                    <p:outputLabel value="FilmId:" for="filmId" />
+                    <p:inputText id="filmId" value="#{filmMBean.details.filmId}" title="FilmId" required="true" requiredMessage="The FilmId field is required."/>
+                    <p:outputLabel value="Title:" for="title" />
+                    <p:inputText id="title" value="#{filmMBean.details.title}" title="Title" required="true" requiredMessage="The Title field is required."/>
+                    <p:outputLabel value="Description:" for="description" />
+                    <p:inputTextarea rows="4" cols="30" id="description" value="#{filmMBean.details.description}" title="Description" />
+                    <p:outputLabel value="ReleaseYear:" for="releaseYear" />
+                    <p:inputText id="releaseYear" value="#{filmMBean.details.releaseYear}" title="ReleaseYear" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </p:inputText>
+                    <p:outputLabel value="RentalDuration:" for="rentalDuration" />
+                    <p:inputText id="rentalDuration" value="#{filmMBean.details.rentalDuration}" title="RentalDuration" required="true" requiredMessage="The RentalDuration field is required."/>
+                    <p:outputLabel value="RentalRate:" for="rentalRate" />
+                    <p:inputText id="rentalRate" value="#{filmMBean.details.rentalRate}" title="RentalRate" required="true" requiredMessage="The RentalRate field is required."/>
+                    <p:outputLabel value="Length:" for="length" />
+                    <p:inputText id="length" value="#{filmMBean.details.length}" title="Length" />
+                    <p:outputLabel value="ReplacementCost:" for="replacementCost" />
+                    <p:inputText id="replacementCost" value="#{filmMBean.details.replacementCost}" title="ReplacementCost" required="true" requiredMessage="The ReplacementCost field is required."/>
+                    <p:outputLabel value="Rating:" for="rating" />
+                    <p:inputText id="rating" value="#{filmMBean.details.rating}" title="Rating" />
+                    <p:outputLabel value="SpecialFeatures:" for="specialFeatures" />
+                    <p:inputText id="specialFeatures" value="#{filmMBean.details.specialFeatures}" title="SpecialFeatures" />
+                    <p:outputLabel value="LastUpdate:" for="lastUpdate" />
+                    <p:inputText id="lastUpdate" value="#{filmMBean.details.lastUpdate}" title="LastUpdate" required="true" requiredMessage="The LastUpdate field is required.">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </p:inputText>
+                    <p:outputLabel value="LanguageId:" for="languageId" />
+                    
+                    
+                    <p:selectOneMenu id="languageId" value="#{filmMBean.details.languageId}" required="true" requiredMessage="The LanguageId field is required.">
+                        <!-- TODO: update below reference to list of available items-->
+                        <f:selectItems value="#{fixme}"/>
+                    </p:selectOneMenu>
+                    <p:outputLabel value="OriginalLanguageId:" for="originalLanguageId" />
+                    <p:selectOneMenu id="originalLanguageId" value="#{filmMBean.details.originalLanguageId}" >
+                        <!-- TODO: update below reference to list of available items-->
+                        <f:selectItems value="#{fixme}"/>
+                    </p:selectOneMenu>
+                </p:panelGrid>
+                
+                <h:commandButton id="back" value="Back" action="#{filmMBean.list()}"/>
+                <h:commandButton id="update" value="Update" action="#{filmMBean.update()}"/>
             </h:form>
         </f:view>
 
