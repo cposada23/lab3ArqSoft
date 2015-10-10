@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        Hello from Facelets
+        <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="List"/></h1>
+                <p:dataTable value="#{filmMBean.films}" var="item">
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="FilmId"/>
+                        </f:facet>
+                        <h:outputText value="#{item.filmId}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Title"/>
+                        </f:facet>
+                        <h:outputText value="#{item.title}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Description"/>
+                        </f:facet>
+                        <h:outputText value="#{item.description}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="ReleaseYear"/>
+                        </f:facet>
+                        <h:outputText value="#{item.releaseYear}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="RentalDuration"/>
+                        </f:facet>
+                        <h:outputText value="#{item.rentalDuration}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="RentalRate"/>
+                        </f:facet>
+                        <h:outputText value="#{item.rentalRate}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Length"/>
+                        </f:facet>
+                        <h:outputText value="#{item.length}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="ReplacementCost"/>
+                        </f:facet>
+                        <h:outputText value="#{item.replacementCost}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Rating"/>
+                        </f:facet>
+                        <h:outputText value="#{item.rating}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="SpecialFeatures"/>
+                        </f:facet>
+                        <h:outputText value="#{item.specialFeatures}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="LastUpdate"/>
+                        </f:facet>
+                        <h:outputText value="#{item.lastUpdate}">
+                            <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                        </h:outputText>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="LanguageId"/>
+                        </f:facet>
+                        <h:outputText value="#{item.languageId}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="OriginalLanguageId"/>
+                        </f:facet>
+                        <h:outputText value="#{item.originalLanguageId}"/>
+                    </p:column>
+                </p:dataTable>
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+

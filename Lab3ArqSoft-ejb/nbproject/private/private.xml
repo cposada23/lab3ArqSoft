@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/cposa/Documents/NetBeansProjects/Lab3ArqSoft/Lab3ArqSoft-ejb/setup/glassfish-resources.xml</file>
+            <file>file:/C:/Users/cposa/Documents/NetBeansProjects/Lab3ArqSoft/Lab3ArqSoft-ejb/src/conf/persistence.xml</file>
+            <file>file:/C:/Users/cposa/Documents/NetBeansProjects/Lab3ArqSoft/Lab3ArqSoft-ejb/src/java/com/udea/entities/Film.java</file>
+            <file>file:/C:/Users/cposa/Documents/NetBeansProjects/Lab3ArqSoft/Lab3ArqSoft-ejb/src/java/com/udea/session/FilmManager.java</file>
+            <file>file:/C:/Users/cposa/Documents/NetBeansProjects/Lab3ArqSoft/Lab3ArqSoft-ejb/src/java/com/udea/session/LaguageManager.java</file>
+        </group>
+    </open-files>
+</project-private>
