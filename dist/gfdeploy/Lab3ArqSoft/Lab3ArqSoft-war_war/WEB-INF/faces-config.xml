@@ -30,4 +30,22 @@
             <to-view-id>/FilmList.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/LanguageDetails.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>LIST</from-outcome>
+            <to-view-id>/LanguageList.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>SAVED</from-outcome>
+            <to-view-id>/LanguageList.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/LanguageList.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>DETAILS</from-outcome>
+            <to-view-id>/LanguageDetails.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>

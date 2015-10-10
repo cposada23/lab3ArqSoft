@@ -15,6 +15,13 @@
             <h:form>
                 <h1><h:outputText value="List"/></h1>
                 <p:dataTable value="#{laguageMBean.languages}" var="item">
+                    <p:column headerText="languageId" sortBy="#{item.languageId}" filterBy="#{item.languageId}"
+                              filterMatchMode="contains">
+                        
+                        <h:commandLink action="#{laguageMBean.showDetails(item)}"
+                                       value="#{item.languageId}"/>
+                    </p:column>
+                    
                     <p:column>
                         <f:facet name="header">
                             <h:outputText value="LanguageId"/>
