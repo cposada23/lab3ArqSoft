@@ -36,6 +36,12 @@ public class LaguageManager {
     public Language update(Language language) {
         return em.merge(language);
     }
+
+    public Language getLanguage(short languageId) {
+        return em.find(Language.class, languageId);
+    }
+    
+    
     
     
 }

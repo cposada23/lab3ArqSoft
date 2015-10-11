@@ -6,6 +6,7 @@
 package com.udea.session;
 
 import com.udea.entities.Film;
+import java.io.Serializable;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.ejb.LocalBean;

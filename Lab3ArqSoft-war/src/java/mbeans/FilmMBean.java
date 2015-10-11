@@ -7,6 +7,7 @@ package mbeans;
 
 import com.udea.entities.Film;
 import com.udea.session.FilmManager;
+import java.io.Serializable;
 import java.util.List;
 import javax.ejb.EJB;
 
@@ -14,7 +15,7 @@ import javax.ejb.EJB;
  *
  * @author cposa
  */
-public class FilmMBean {
+public class FilmMBean{
     @EJB
     private FilmManager filmManager;
 

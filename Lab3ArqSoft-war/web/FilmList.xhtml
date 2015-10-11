@@ -108,7 +108,9 @@
                         <f:facet name="header">
                             <h:outputText value="LanguageId"/>
                         </f:facet>
-                        <h:outputText value="#{item.languageId}"/>
+                        <!--<h:outputText value="#{item.languageId}"/>-->
+                        <h:commandLink action="#{laguageMBean.showDetails(item.languageId)}"
+                                       value="#{item.languageId}"/>
                     </p:column>
                     <p:column>
                         <f:facet name="header">

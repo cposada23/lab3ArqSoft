@@ -7,6 +7,7 @@ package mbeans;
 
 import com.udea.entities.Language;
 import com.udea.session.LaguageManager;
+import java.io.Serializable;
 import java.util.List;
 import javax.ejb.EJB;
 
@@ -39,6 +40,10 @@ public class LanguageMBean {
     
     public Language getDetails(){
         return language;
+    }
+    
+    public Language getLanguage(short languageId){
+        return languageManager.getLanguage(languageId);
     }
     
     public String showDetails(Language language){
