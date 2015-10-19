@@ -38,5 +38,9 @@ public class FilmManager {
         return em.merge(film);
     }
     
+    public void delete(Film film){
+        Film f = em.merge(film);
+        em.remove(f);
+    }
     
 }

@@ -29,7 +29,7 @@ public class LanguageMBean {
     }
     
     public List<Language> getLanguages(){
-        if(languages==null||languages.isEmpty())refresh();
+        refresh();
         return languages;
     }
     public void refresh(){
@@ -39,24 +39,29 @@ public class LanguageMBean {
     
     
     public Language getDetails(){
+        refresh();
         return language;
     }
     
     public Language getLanguage(short languageId){
+        refresh();
         return languageManager.getLanguage(languageId);
     }
     
     public String showDetails(Language language){
+        refresh();
         this.language=language;
         return "LanguageDetails";
     }
     
     public String update(){
+        refresh();
        language = languageManager.update(language);
        return "LanguageList";
     }
     
     public String list(){
+        refresh();
         return "LanguageList";
     }
     

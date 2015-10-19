@@ -28,7 +28,7 @@ public class FilmMBean{
     public FilmMBean() {
     }
     public List<Film> getFilms(){
-        if(films==null|| films.isEmpty())refresh();
+        refresh();
         return films;
     }
     
@@ -37,21 +37,32 @@ public class FilmMBean{
     }
     
     public Film getDetails(){
+        refresh();
         return film;
     }
     
     public String showDetails(Film film){
+        refresh();
         this.film= film;
         return "FilmDetails";
     }
     
     public String update(){
+        refresh();
         System.out.println("update");
         film = filmManager.update(film);
         return "FilmList";
     }
     
+    public String delete(){
+        refresh();
+        System.out.println("delete");
+        filmManager.delete(film);
+        return "FilmList";
+    }
+    
     public String list(){
+        refresh();
         return "FilmList";
     }
     
