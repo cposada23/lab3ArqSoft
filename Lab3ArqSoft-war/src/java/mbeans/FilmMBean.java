@@ -8,6 +8,7 @@ package mbeans;
 import com.udea.entities.Film;
 import com.udea.entities.Language;
 import com.udea.session.FilmManager;
+import com.udea.session.LaguageManager;
 import java.io.Serializable;
 import java.util.List;
 import javax.ejb.EJB;
@@ -18,7 +19,11 @@ import javax.ejb.EJB;
  */
 public class FilmMBean{
     @EJB
+    private LaguageManager laguageManager;
+    @EJB
     private FilmManager filmManager;
+    
+    
 
     private Film film;
     private List<Film> films;
@@ -50,7 +55,10 @@ public class FilmMBean{
     
     public String update(){
         refresh();
-        
+        Language la = laguageManager.getLanguageByName(film.getLanguageId().getName());
+        System.out.println("Language buscado por nombre " + la.getName());
+        System.out.println("Id Language buscado por nombre" + la.getLanguageId());
+        film.setLanguageId(la);
         //debug---------------
         System.out.println("update");
         Language l = film.getLanguageId(); 

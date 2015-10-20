@@ -11,6 +11,7 @@ import javax.ejb.Stateless;
 import javax.ejb.LocalBean;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -41,8 +42,17 @@ public class LaguageManager {
         return em.find(Language.class, languageId);
     }
     
-    public void delete(Language languange){
-        em.remove(languange);
+    public Language getLanguageByName(String name) {
+        Query query = em.createQuery("SELECT l FROM Language l WHERE l.name = :name");
+        query.setParameter("name", name);
+        List<Language> l = query.getResultList();
+        return l.get(0);
+        
+    }
+    
+    public void delete(Language language){
+        Language l = em.merge(language);
+        em.remove(l);
     }
     
     
