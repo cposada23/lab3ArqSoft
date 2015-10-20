@@ -21,6 +21,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.FetchType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -55,7 +56,7 @@ public class Language implements Serializable {
     @Column(name = "last_update")
     @Temporal(TemporalType.TIMESTAMP)
     private Date lastUpdate;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "languageId")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "languageId", fetch = FetchType.EAGER)
     private List<Film> filmList;
     @OneToMany(mappedBy = "originalLanguageId")
     private List<Film> filmList1;

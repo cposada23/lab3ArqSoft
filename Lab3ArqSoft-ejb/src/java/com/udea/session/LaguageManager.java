@@ -41,6 +41,10 @@ public class LaguageManager {
         return em.find(Language.class, languageId);
     }
     
+    public void delete(Language languange){
+        em.remove(languange);
+    }
+    
     
     
     

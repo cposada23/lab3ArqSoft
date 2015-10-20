@@ -6,6 +6,7 @@
 package mbeans;
 
 import com.udea.entities.Film;
+import com.udea.entities.Language;
 import com.udea.session.FilmManager;
 import java.io.Serializable;
 import java.util.List;
@@ -49,8 +50,22 @@ public class FilmMBean{
     
     public String update(){
         refresh();
+        
+        //debug---------------
         System.out.println("update");
+        Language l = film.getLanguageId(); 
+        System.out.println("nombreLanguageAntesUpdate "+l.getName());
+        System.out.println("id Language antes "+l.getLanguageId());
+        //debug --------------
+        
         film = filmManager.update(film);
+        
+        //debug--------------
+        l = film.getLanguageId();
+        System.out.println("nombreLanguagedespuesUpdate "+l.getName());
+        System.out.println("id Language despues "+l.getLanguageId());
+        
+        //debug---------------
         return "FilmList";
     }
     

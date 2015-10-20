@@ -65,4 +65,11 @@ public class LanguageMBean {
         return "LanguageList";
     }
     
+    public String delete(){
+        refresh();
+        System.out.println("delete");
+        languageManager.delete(language);
+        return "LanguageList";
+    }
+    
 }
