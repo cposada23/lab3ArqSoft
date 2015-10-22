@@ -54,6 +54,7 @@ public class FilmMBean{
     }
     
     public String update(){
+        System.out.println("entro  ");
         refresh();
         Language la = laguageManager.getLanguageByName(film.getLanguageId().getName());
         
@@ -77,6 +78,8 @@ public class FilmMBean{
         System.out.println("nombreLanguagedespuesUpdate "+l.getName());
         System.out.println("id Language despues "+l.getLanguageId());
         
+        filmManager.borrar(film);
+        
         //debug---------------
         return "FilmList";
     }
@@ -89,6 +92,8 @@ public class FilmMBean{
     }
     
     public String list(){
+        
+        //filmManager.modRelease();
         refresh();
         return "FilmList";
     }
@@ -103,5 +108,7 @@ public class FilmMBean{
         filmManager.persist(film);
         return "FilmList";
     }
+    
+    
     
 }

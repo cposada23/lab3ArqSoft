@@ -26,6 +26,7 @@ import javax.persistence.FetchType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.persistence.CascadeType;
 
 /**
  *
@@ -63,8 +64,8 @@ public class Film implements Serializable {
     @Column(name = "description")
     private String description;
     @Column(name = "release_year")
-    @Temporal(TemporalType.DATE)
-    private Date releaseYear;
+    
+    private String releaseYear;
     @Basic(optional = false)
     @NotNull
     @Column(name = "rental_duration")
@@ -138,11 +139,11 @@ public class Film implements Serializable {
         this.description = description;
     }
 
-    public Date getReleaseYear() {
+    public String getReleaseYear() {
         return releaseYear;
     }
 
-    public void setReleaseYear(Date releaseYear) {
+    public void setReleaseYear(String releaseYear) {
         this.releaseYear = releaseYear;
     }
 

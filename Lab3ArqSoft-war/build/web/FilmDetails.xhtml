@@ -38,7 +38,7 @@
                     <p:inputTextarea rows="4" cols="30" id="description" value="#{filmMBean.details.description}" title="Description" />
                     <p:outputLabel value="ReleaseYear:" for="releaseYear" />
                     <p:inputText id="releaseYear" value="#{filmMBean.details.releaseYear}" title="ReleaseYear" >
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <!--<f:convertDateTime pattern="MM/dd/yyyy" />-->
                     </p:inputText>
                     <p:outputLabel value="RentalDuration:" for="rentalDuration" />
                     <p:inputText id="rentalDuration" value="#{filmMBean.details.rentalDuration}" title="RentalDuration" required="true" requiredMessage="The RentalDuration field is required."/>

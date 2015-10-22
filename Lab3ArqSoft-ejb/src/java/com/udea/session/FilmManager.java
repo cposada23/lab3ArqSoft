@@ -6,12 +6,14 @@
 package com.udea.session;
 
 import com.udea.entities.Film;
+import com.udea.entities.FilmActor;
 import java.io.Serializable;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.ejb.LocalBean;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -33,13 +35,26 @@ public class FilmManager {
     public List<Film> getAllFilms() {
         return em.createNamedQuery("Film.findAll").getResultList();
     }
+    public void modRelease(){
+        
+    }
 
     public Film update(Film film) {
         return em.merge(film);
     }
     
+    public void borrar(Film film){
+        Query q=em.createQuery("SELECT f.actor FROM FilmActor f  WHERE f. ="+film.getFilmId());
+        Query q2;
+        List<FilmActor> fc=q.getResultList();
+        System.out.println(fc.get(0).getActor().getFirstName());
+    }
+    
+    
     public void delete(Film film){
-        Film f = em.merge(film);
+        Film f = em.find(Film.class, film.getFilmId());
+        
+        //Film f = em.merge(film);
         em.remove(f);
     }
     
