@@ -16,7 +16,7 @@
                 <h1><h:outputText value="Create/Edit"/></h1>
                 <p:panelGrid columns="2">
                     <p:outputLabel value="FilmId:" for="filmId" />
-                    <p:inputText id="filmId" value="#{filmMBean.details.filmId}" title="FilmId" required="true" requiredMessage="The FilmId field is required."/>
+                    <p:inputText id="filmId" value="#{filmMBean.details.filmId}" title="FilmId" required="true" requiredMessage="The FilmId field is required." disabled="true"/>
                     <p:outputLabel value="Title:" for="title" />
                     <p:inputText id="title" value="#{filmMBean.details.title}" title="Title" required="true" requiredMessage="The Title field is required."/>
                     <p:outputLabel value="Description:" for="description" />
@@ -38,16 +38,18 @@
                     <p:outputLabel value="SpecialFeatures:" for="specialFeatures" />
                     <p:inputText id="specialFeatures" value="#{filmMBean.details.specialFeatures}" title="SpecialFeatures" />
                     <p:outputLabel value="LastUpdate:" for="lastUpdate" />
+                    
                     <p:inputText id="lastUpdate" value="#{filmMBean.details.lastUpdate}" title="LastUpdate" required="true" requiredMessage="The LastUpdate field is required.">
                         <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
                     </p:inputText>
-                    <p:outputLabel value="LanguageId:" for="languageId" />
                     
+                    <p:outputLabel value="LanguageId:" for="languageId" />
                     
                     <p:selectOneMenu id="languageId" value="#{filmMBean.details.languageId.name}" required="true" requiredMessage="The LanguageId field is required.">
                         <!-- TODO: update below reference to list of available items-->
                         <f:selectItems value="#{laguageMBean.languages}"/>
                     </p:selectOneMenu>
+                    
                     <p:outputLabel value="OriginalLanguageId:" for="originalLanguageId" />
                     <p:selectOneMenu id="originalLanguageId" value="#{filmMBean.details.originalLanguageId}" >
                         <!-- TODO: update below reference to list of available items-->
@@ -58,6 +60,8 @@
                 <h:commandButton id="back" value="Back" action="#{filmMBean.list()}"/>
                 <h:commandButton id="update" value="Update" action="#{filmMBean.update()}"/>
                 <h:commandButton id="delete" value="Delete" action="#{filmMBean.delete()}"/>
+                <h:commandButton id="add" value="Add" action="#{filmMBean.add()}"/>
+                
             </h:form>
         </f:view>
 

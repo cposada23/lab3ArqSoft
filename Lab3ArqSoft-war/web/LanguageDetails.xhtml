@@ -15,7 +15,7 @@
                 <h1><h:outputText value="Create/Edit"/></h1>
                 <p:panelGrid columns="2">
                     <p:outputLabel value="LanguageId:" for="languageId" />
-                    <p:inputText id="languageId" value="#{laguageMBean.details.languageId}" title="LanguageId" required="true" requiredMessage="The LanguageId field is required."/>
+                    <p:inputText id="languageId" value="#{laguageMBean.details.languageId}" title="LanguageId" required="true" requiredMessage="The LanguageId field is required." disabled="true"/>
                     <p:outputLabel value="Name:" for="name" />
                     <p:inputText id="name" value="#{laguageMBean.details.name}" title="Name" required="true" requiredMessage="The Name field is required."/>
                     <p:outputLabel value="LastUpdate:" for="lastUpdate" />
@@ -27,6 +27,7 @@
                 <h:commandButton id="back" value="Back" action="#{laguageMBean.list()}"/>
                 <h:commandButton id="update" value="Update" action="#{laguageMBean.update()}"/>
                 <h:commandButton id="delete" value="Delete" action="#{laguageMBean.delete()}"/>
+                <h:commandButton id="add" value="Add" action="#{laguageMBean.add()}"/>
             </h:form>
         </f:view>
 

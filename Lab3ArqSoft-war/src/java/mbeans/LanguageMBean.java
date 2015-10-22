@@ -71,5 +71,9 @@ public class LanguageMBean {
         languageManager.delete(language);
         return "LanguageList";
     }
-    
+    public String add(){
+        languageManager.persist(language);
+        refresh();
+        return "LanguageList";
+    }
 }

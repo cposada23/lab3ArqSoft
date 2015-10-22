@@ -48,12 +48,16 @@
                         </f:facet>
                         <h:outputText value="#{item.title}"/>
                     </p:column>
+                    
+                    
                     <p:column>
                         <f:facet name="header">
                             <h:outputText value="Description"/>
                         </f:facet>
                         <h:outputText value="#{item.description}"/>
                     </p:column>
+                    
+                    
                     <p:column>
                         <f:facet name="header">
                             <h:outputText value="ReleaseYear"/>
@@ -62,42 +66,56 @@
                             <f:convertDateTime pattern="MM/dd/yyyy" />
                         </h:outputText>
                     </p:column>
+                    
+                    
                     <p:column>
                         <f:facet name="header">
                             <h:outputText value="RentalDuration"/>
                         </f:facet>
                         <h:outputText value="#{item.rentalDuration}"/>
                     </p:column>
+                    
+                    
                     <p:column>
                         <f:facet name="header">
                             <h:outputText value="RentalRate"/>
                         </f:facet>
                         <h:outputText value="#{item.rentalRate}"/>
                     </p:column>
+                    
+                    
                     <p:column>
                         <f:facet name="header">
                             <h:outputText value="Length"/>
                         </f:facet>
                         <h:outputText value="#{item.length}"/>
                     </p:column>
+                    
+                    
                     <p:column>
                         <f:facet name="header">
                             <h:outputText value="ReplacementCost"/>
                         </f:facet>
                         <h:outputText value="#{item.replacementCost}"/>
                     </p:column>
+                    
+                    
                     <p:column>
                         <f:facet name="header">
                             <h:outputText value="Rating"/>
                         </f:facet>
                         <h:outputText value="#{item.rating}"/>
                     </p:column>
+                    
+                    
                     <p:column>
                         <f:facet name="header">
                             <h:outputText value="SpecialFeatures"/>
                         </f:facet>
                         <h:outputText value="#{item.specialFeatures}"/>
                     </p:column>
+                    
+                    
                     <p:column>
                         <f:facet name="header">
                             <h:outputText value="LastUpdate"/>
@@ -106,6 +124,9 @@
                             <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
                         </h:outputText>
                     </p:column>
+                    
+                    
+                   
                     <p:column>
                         <f:facet name="header">
                             <h:outputText value="LanguageId"/>
@@ -114,13 +135,18 @@
                         <h:commandLink action="#{laguageMBean.showDetails(item.languageId)}"
                                        value="#{item.languageId}"/>
                     </p:column>
+                    
+                    
                     <p:column>
                         <f:facet name="header">
                             <h:outputText value="OriginalLanguageId"/>
                         </f:facet>
                         <h:outputText value="#{item.originalLanguageId}"/>
                     </p:column>
+                    
+                    
                 </p:dataTable>
+                
             </h:form>
         </f:view>
 

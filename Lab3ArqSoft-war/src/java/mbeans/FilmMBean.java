@@ -56,8 +56,12 @@ public class FilmMBean{
     public String update(){
         refresh();
         Language la = laguageManager.getLanguageByName(film.getLanguageId().getName());
+        
+        
         System.out.println("Language buscado por nombre " + la.getName());
         System.out.println("Id Language buscado por nombre" + la.getLanguageId());
+        
+        
         film.setLanguageId(la);
         //debug---------------
         System.out.println("update");
@@ -85,6 +89,12 @@ public class FilmMBean{
     }
     
     public String list(){
+        refresh();
+        return "FilmList";
+    }
+    
+    public String add(){
+        filmManager.persist(film);
         refresh();
         return "FilmList";
     }
