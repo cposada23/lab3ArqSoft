@@ -18,8 +18,20 @@
         <title>Lista Peliculas</title>
     </h:head>
     <h:body>
-        <a href="FilmList.xhtml">filmList</a>
-        <a href="LanguageList.xhtml">Language LIst</a>
+        <p:menubar>
+        <p:submenu label="Films" icon="ui-icon-document">
+            
+            <p:menuitem value="Film List" url="./FilmList.xhtml" />
+            
+        </p:submenu>
+ 
+        <p:submenu label="Languages" icon="ui-icon-pencil">
+            <p:menuitem value="LanguageList" url="./LanguageList.xhtml" icon="ui-icon-arrowreturnthick-1-w" />
+            
+        </p:submenu>
+ 
+
+    </p:menubar>
         
         <f:view>
 

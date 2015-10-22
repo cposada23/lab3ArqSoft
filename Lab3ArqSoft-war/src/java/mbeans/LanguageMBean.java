@@ -55,8 +55,9 @@ public class LanguageMBean {
     }
     
     public String update(){
-        refresh();
+        
        language = languageManager.update(language);
+       refresh();
        return "LanguageList";
     }
     
