@@ -94,8 +94,23 @@ public class FilmMBean{
     }
     
     public String add(){
-        filmManager.persist(film);
+        
         refresh();
+        Language la = laguageManager.getLanguageByName(film.getLanguageId().getName());
+        
+        
+        System.out.println("Language buscado por nombre " + la.getName());
+        System.out.println("Id Language buscado por nombre" + la.getLanguageId());
+        
+        
+        film.setLanguageId(la);
+        //debug---------------
+        System.out.println("update");
+        Language l = film.getLanguageId(); 
+        System.out.println("nombreLanguageAntesUpdate "+l.getName());
+        System.out.println("id Language antes "+l.getLanguageId());
+        //debug --------------
+        filmManager.persist(film);
         return "FilmList";
     }
     
