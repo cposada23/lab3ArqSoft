@@ -78,7 +78,7 @@ public class FilmMBean{
         System.out.println("nombreLanguagedespuesUpdate "+l.getName());
         System.out.println("id Language despues "+l.getLanguageId());
         
-        filmManager.borrar(film);
+      
         
         //debug---------------
         return "FilmList";

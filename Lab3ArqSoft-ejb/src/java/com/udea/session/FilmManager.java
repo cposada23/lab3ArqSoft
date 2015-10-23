@@ -36,6 +36,7 @@ public class FilmManager {
         return em.createNamedQuery("Film.findAll").getResultList();
     }
     public void modRelease(){
+
         
     }
 
@@ -43,12 +44,7 @@ public class FilmManager {
         return em.merge(film);
     }
     
-    public void borrar(Film film){
-        Query q=em.createQuery("SELECT f.actor FROM FilmActor f  WHERE f. ="+film.getFilmId());
-        Query q2;
-        List<FilmActor> fc=q.getResultList();
-        System.out.println(fc.get(0).getActor().getFirstName());
-    }
+    
     
     
     public void delete(Film film){

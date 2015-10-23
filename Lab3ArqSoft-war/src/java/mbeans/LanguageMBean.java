@@ -73,8 +73,10 @@ public class LanguageMBean {
         return "LanguageList";
     }
     public String add(){
+        
+        language.setFilmList(null);
         languageManager.persist(language);
-        refresh();
         return "LanguageList";
+        
     }
 }
