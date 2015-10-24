@@ -19,27 +19,5 @@ Teniendo esto en cuanta para que nuestro CRUD funcione perfectamente se debe apr
 
 ALTER TABLE film  MODIFY release_year varchar(20);
 
-ALTER TABLE film_actor
-ADD CONSTRAINT fk_film_actor_film2
-FOREIGN KEY (film_id)
-REFERENCES film (film_id)
-ON DELETE CASCADE;
 
-ALTER TABLE film_category
-ADD CONSTRAINT fk_film_category_film2
-FOREIGN KEY (film_id)
-REFERENCES film (film_id)
-ON DELETE CASCADE;
-
-ALTER TABLE inventory
-ADD CONSTRAINT fk_inventory_film2
-FOREIGN KEY (film_id)
-REFERENCES film (film_id)
-ON DELETE CASCADE;
-
-ALTER TABLE rental
-ADD CONSTRAINT fk_rental_inventory2
-FOREIGN KEY (inventory_id)
-REFERENCES inventory (inventory_id)
-ON DELETE CASCADE;
 
