@@ -7,6 +7,7 @@ package com.udea.entities;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -27,6 +28,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.persistence.CascadeType;
+import javax.persistence.OneToMany;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -48,6 +51,8 @@ import javax.persistence.CascadeType;
     @NamedQuery(name = "Film.findBySpecialFeatures", query = "SELECT f FROM Film f WHERE f.specialFeatures = :specialFeatures"),
     @NamedQuery(name = "Film.findByLastUpdate", query = "SELECT f FROM Film f WHERE f.lastUpdate = :lastUpdate")})
 public class Film implements Serializable {
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "filmId")
+    private Collection<Inventory> inventoryCollection;
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -242,6 +247,15 @@ public class Film implements Serializable {
     @Override
     public String toString() {
         return "com.udea.entities.Film[ filmId=" + filmId + " ]";
+    }
+
+    @XmlTransient
+    public Collection<Inventory> getInventoryCollection() {
+        return inventoryCollection;
+    }
+
+    public void setInventoryCollection(Collection<Inventory> inventoryCollection) {
+        this.inventoryCollection = inventoryCollection;
     }
     
 }
